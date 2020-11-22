@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+
+        function ending(money) {
+            let number = money.charAt(money.length - 1);
+            let numbers = money.charAt(money.length - 2) + money.charAt(money.length - 1);
+
+            switch (numbers) {
+                case '11':
+                case '12':
+                case '13':
+                case '14':
+                    return 'рублей'
+            }
+
+            switch (number) {
+                case '1':
+                    return 'рубль';
+                case '2':
+                case '3':
+                case '4':
+                    return 'рубля';
+                default:
+                    return 'рублей';
+            }
+
+        }
+
+        let money = prompt("Введите сумму: ");
+        let total = ending(money);
+        alert("Ваша сумма в " + money + ' ' + total + " успешно зачислена.");
+
+
+    </script>
+</body>
+
+</html>
