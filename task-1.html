@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        'use strict';
+
+        class Numbers {
+            constructor(number) {
+                this.number = number;
+            }
+
+            separation() {
+                if (this.number > 999 || this.number < 0) {
+                    console.log('Число вне допустимого диапазона.');
+                } else if (!(Number.isInteger(this.number))) {
+                    console.log('Введите целое число.');
+                } else {
+                    let hundreds = Math.floor(this.number / 100);
+                    let tens = Math.floor(this.number % 100 / 10);
+                    let units = this.number % 10;
+                    console.log('Число - ' + this.number);
+                    console.log('Единиц - ' + units);
+                    console.log('Десятков - ' + tens);
+                    console.log('Сотен - ' + hundreds);
+                    console.log('*'.repeat(20));
+                }
+            }
+        }
+
+
+        const some_numbers = [
+            new Numbers(857),
+            new Numbers(45),
+            new Numbers(1),
+            new Numbers(100),
+            new Numbers(120),
+            new Numbers('Number'),
+            new Numbers(1456),
+            new Numbers(12.56)
+        ]
+        for (let num of some_numbers) {
+            num.separation();
+        }
+
+    </script>
+</body>
+
+</html>
