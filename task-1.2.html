@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        'use strict';
+
+        //******************************************************************************************************************
+
+        // es5
+
+        function Post(autor, text, date) {
+            this.autor = autor;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function () {
+            this.text = prompt('Ввод: ');
+        }
+
+        function AttachedPost(autor, text, date) {
+            Post.call(this, autor, text, date);
+        }
+        AttachedPost.highlighted = false;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            AttachedPost.highlighted = true;
+        }
+
+        //******************************************************************************************************************
+
+        //es6
+
+        class NewPost {
+            constructor(autor, text, date) {
+                this.autor = autor;
+                this.text = text;
+                this.date = date;
+            }
+        }
+        new_edit = function () {
+            this.text = prompt('Ввод: ');
+        }
+        class NewAttachedPost extends NewPost {
+            constructor(autor, text, date) {
+                super(autor, text, date);
+            }
+
+            highlighted = false;
+            makeTextHighlighted = function () {
+                AttachedPost.highlighted = true;
+            }
+        }
+
+        //******************************************************************************************************************
+    </script>
+</body>
+
+</html>
